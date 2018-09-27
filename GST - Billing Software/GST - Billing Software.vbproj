@@ -79,7 +79,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Objects\Address.vb" />
+    <Compile Include="Classes\Objects\Good.vb" />
     <Compile Include="Classes\Objects\Party.vb" />
+    <Compile Include="Classes\Objects\Units.vb" />
     <Compile Include="Classes\Objects\States.vb" />
     <Compile Include="Classes\XtraFormTemp.vb">
       <SubType>Form</SubType>
