@@ -78,6 +78,7 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Database\Connection.vb" />
     <Compile Include="Classes\Encryption.vb" />
     <Compile Include="Classes\Invoices\DeliveryChallan.vb" />
     <Compile Include="Classes\Objects\Address.vb" />
