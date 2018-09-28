@@ -26,16 +26,40 @@ Namespace Classes.Database
 
         Private Shared TableName As String = "Users"
 
-        Public Shared Function GetUserNames() As List(Of String)
+        Public Shared Async Function Login(ByVal UserName As String, ByVal Password As String) As Threading.Tasks.Task(Of Objects.User)
+            Dim R As Objects.User = Nothing
+
+            Dim Connection As SqlConnection = GetConnection()
+            If Connection.State = ConnectionState.Closed Then Await Connection.OpenAsync()
+
+            Dim CommandText As String = String.Format("SELECT * FROM {0} WHERE [UserName]=@UserName AND [Password]=@Password;", TableName)
+
+            Using Command As New SqlCommand(CommandText, Connection)
+                Command.Parameters.AddWithValue("@UserName", UserName)
+                Command.Parameters.AddWithValue("@Password", Encryption.Encrypt(Password))
+
+                Using Reader As SqlDataReader = Await Command.ExecuteReaderAsync
+                    If Reader.Read Then
+                        R = Read(Reader)
+                    End If
+                End Using
+            End Using
+
+            Connection.Close()
+
+            Return R
+        End Function
+
+        Public Shared Async Function GetUserNames() As Threading.Tasks.Task(Of List(Of String))
             Dim R As New List(Of String)
 
             Dim Connection As SqlConnection = GetConnection()
-            If Connection.State = ConnectionState.Closed Then Connection.Open()
+            If Connection.State = ConnectionState.Closed Then Await Connection.OpenAsync()
 
             Dim CommandText As String = String.Format("SELECT [UserName] FROM {0}", TableName)
 
             Using Command As New SqlCommand(CommandText, Connection)
-                Using Reader As SqlDataReader = Command.ExecuteReader
+                Using Reader As SqlDataReader = Await Command.ExecuteReaderAsync
                     While Reader.Read
                         Dim Username As String = Reader.Item("UserName").ToString.Trim
                         If Not String.IsNullOrEmpty(Username) AndAlso Not R.Contains(Username) Then
@@ -50,16 +74,16 @@ Namespace Classes.Database
             Return R
         End Function
 
-        Public Shared Function GetUsers() As List(Of Objects.User)
+        Public Shared Async Function GetUsers() As Threading.Tasks.Task(Of List(Of Objects.User))
             Dim R As New List(Of Objects.User)
 
             Dim Connection As SqlConnection = GetConnection()
-            If Connection.State = ConnectionState.Closed Then Connection.Open()
+            If Connection.State = ConnectionState.Closed Then Await Connection.OpenAsync()
 
             Dim CommandText As String = String.Format("SELECT * FROM {0}", TableName)
 
             Using Command As New SqlCommand(CommandText, Connection)
-                Using Reader As SqlDataReader = Command.ExecuteReader
+                Using Reader As SqlDataReader = Await Command.ExecuteReaderAsync
                     While Reader.Read
                         Dim User As Objects.User = Read(Reader)
                         If User IsNot Nothing Then
@@ -77,13 +101,13 @@ Namespace Classes.Database
         Private Shared Function Read(ByVal Reader As SqlDataReader) As Objects.User
             Try
                 Dim ID As Integer = Reader.Item("ID")
-                Dim FullName As String = Reader.Item("FullName")
-                Dim UserName As String = Reader.Item("UserName")
-                Dim Position As String = Reader.Item("Position")
+                Dim FullName As String = Reader.Item("FullName").ToString
+                Dim UserName As String = Reader.Item("UserName").ToString
+                Dim Position As String = Reader.Item("Position").ToString
                 Dim DOB As Date = Reader.Item("DOB")
                 Dim JoinDate As Date = Reader.Item("JoinDate")
-                Dim Address As Objects.Address = Serializer.FromXML(Of Objects.Address)(Reader.Item("Address").ToString)
-                Dim Mobile As String = Reader.Item("Mobile")
+                Dim Address As Objects.Address = If(String.IsNullOrEmpty(Reader.Item("Address").ToString), New Objects.Address, Serializer.FromXML(Of Objects.Address)(Reader.Item("Address").ToString))
+                Dim Mobile As String = Reader.Item("Mobile").ToString
                 Dim Picture As Image = My.Resources.staff_128x128
 
                 If Reader.Item("Picture") IsNot Nothing Then

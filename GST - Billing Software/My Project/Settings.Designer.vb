@@ -65,6 +65,18 @@ Namespace My
                 Me("Skin") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
+        Public Property LastSelectedIndex() As Integer
+            Get
+                Return CType(Me("LastSelectedIndex"),Integer)
+            End Get
+            Set
+                Me("LastSelectedIndex") = value
+            End Set
+        End Property
     End Class
 End Namespace
 
