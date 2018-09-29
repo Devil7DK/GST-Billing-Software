@@ -33,6 +33,12 @@ Namespace Classes.Objects
         <DisplayName("PIN Code")>
         Property PinCode As Integer
         Property State As State
+
+        ReadOnly Property Address As String
+            Get
+                Return String.Join(vbNewLine, AddressLine1, AddressLine2, String.Format("{0} - {1}", City, PinCode.ToString("000000")), State.ToString)
+            End Get
+        End Property
 #End Region
 
 #Region "Constructors"
@@ -55,7 +61,7 @@ Namespace Classes.Objects
 
 #Region "Subs/Functions"
         Public Overrides Function ToString() As String
-            Return String.Join(vbNewLine, AddressLine1, AddressLine2, String.Format("{0} - {1}", City, PinCode.ToString("000000")))
+            Return Address
         End Function
 #End Region
 
