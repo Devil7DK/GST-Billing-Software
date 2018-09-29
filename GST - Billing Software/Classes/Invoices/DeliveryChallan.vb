@@ -32,9 +32,27 @@ Namespace Classes.Invoices.DeliveryChallan
         Property SerialNo As String
         <DisplayName("Voucher Date")>
         Property VoucherDate As Date
+        Property Sender As Sender
         Property Consignee As Party
         <DisplayName("List of Goods")>
         Property Goods As List(Of Item)
+        Property User As User
+        ReadOnly Property Total As Double
+            Get
+                Dim R As Double = 0
+                For Each i As Item In Goods
+                    R += i.Value
+                Next
+                Return R
+            End Get
+        End Property
+        <DisplayName("Amount in Words")>
+        ReadOnly Property AmountInWords As String
+            Get
+                Return Misc.AmountInWords(Total).Trim
+            End Get
+        End Property
+
 #End Region
 
 #Region "Constructors"
@@ -42,15 +60,19 @@ Namespace Classes.Invoices.DeliveryChallan
             Me.ID = -1
             Me.SerialNo = "0"
             Me.VoucherDate = Now
+            Me.Sender = New Sender
             Me.Consignee = New Party
             Me.Goods = New List(Of Item)
+            Me.User = New User
         End Sub
-        Sub New(ByVal ID As Integer, ByVal SerialNo As String, ByVal VoucherDate As Date, ByVal Consignee As Party, ByVal Goods As List(Of Item))
+        Sub New(ByVal ID As Integer, ByVal SerialNo As String, ByVal VoucherDate As Date, ByVal Sender As Sender, ByVal Consignee As Party, ByVal Goods As List(Of Item), ByVal User As User)
             Me.ID = ID
             Me.SerialNo = SerialNo
             Me.VoucherDate = VoucherDate
+            Me.Sender = Sender
             Me.Consignee = Consignee
             Me.Goods = Goods
+            Me.User = User
         End Sub
 #End Region
 
