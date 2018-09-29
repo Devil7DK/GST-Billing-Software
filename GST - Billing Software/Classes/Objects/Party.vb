@@ -57,7 +57,7 @@ Namespace Classes.Objects
             Me.ID = ID
             Me.Name = Name
             Me.GSTIN = GSTIN
-            Me.Address = New Address
+            Me.Address = Address
             Me.Mobile = Mobile
         End Sub
 #End Region
