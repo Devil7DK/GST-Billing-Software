@@ -19,34 +19,16 @@
 '                                                                          '
 '=========================================================================='
 
-Imports Devil7.Billing.GST.Classes
+Imports DevExpress.XtraReports.UI
 
-Namespace Forms
-    Public Class frm_Main
+Namespace Forms.Dialogs.Reports
+    Public Class frm_ReportViewer
 
-#Region "Variables"
-        Dim User As Objects.User
-        Dim LoginInstance As Dialogs.frm_Login
-#End Region
-
-#Region "Constructor"
-        Sub New(User As Objects.User, LoginInstance As Dialogs.frm_Login)
+#Region "Constructors"
+        Sub New(ByVal Report As XtraReport)
             InitializeComponent()
-            Me.User = User
-            Me.LoginInstance = LoginInstance
-        End Sub
-#End Region
-
-#Region "Form Events"
-        Private Sub frm_Main_Load(sender As Object, e As EventArgs) Handles Me.Load
-            LoginInstance.BeginInvoke(Sub() LoginInstance.Close())
-            rp_Developer.Visible = (Debugger.IsAttached Or (My.Application.CommandLineArgs.Count > 0 AndAlso My.Application.CommandLineArgs.Item(0).ToString = "-d"))
-        End Sub
-#End Region
-
-#Region "Control Events"
-        Private Sub btn_Testing_Reports_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btn_Testing_Reports.ItemClick
-            Forms.Dialogs.Reports.frm_Reports_Test.ShowDialog()
+            DocumentViewer.DocumentSource = Report
+            Report.CreateDocument()
         End Sub
 #End Region
 

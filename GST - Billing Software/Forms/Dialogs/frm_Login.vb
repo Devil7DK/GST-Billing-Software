@@ -36,7 +36,10 @@ Namespace Forms.Dialogs
                 MsgBox(ex.Message, MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "Error")
             End Try
 
-            If User IsNot Nothing Then
+            If User IsNot Nothing Or Debugger.IsAttached Then
+                If User Is Nothing Then
+                    User = New Classes.Objects.User(1, "Administrator", "Admin", "System Admin", "01-01-2018", "01-01-2018", New Classes.Objects.Address(), "N/A", Nothing)
+                End If
                 Dim th As New Threading.Thread(Sub() Application.Run(New frm_Main(User, Me)))
                 th.SetApartmentState(Threading.ApartmentState.STA)
                 th.Start()

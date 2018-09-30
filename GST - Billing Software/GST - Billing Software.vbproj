@@ -115,6 +115,18 @@
     <Compile Include="Forms\Dialogs\frm_Login.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Dialogs\Reports\frm_Reports_Test.Designer.vb">
+      <DependentUpon>frm_Reports_Test.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dialogs\Reports\frm_Reports_Test.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\Reports\frm_ReportViewer.Designer.vb">
+      <DependentUpon>frm_ReportViewer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dialogs\Reports\frm_ReportViewer.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\frm_Main.Designer.vb">
       <DependentUpon>frm_Main.vb</DependentUpon>
     </Compile>
@@ -146,6 +158,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Forms\Dialogs\frm_Login.resx">
       <DependentUpon>frm_Login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\Reports\frm_Reports_Test.resx">
+      <DependentUpon>frm_Reports_Test.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\Reports\frm_ReportViewer.resx">
+      <DependentUpon>frm_ReportViewer.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frm_Main.resx">
       <DependentUpon>frm_Main.vb</DependentUpon>

@@ -22,22 +22,25 @@
         Private Sub InitializeComponent()
             Me.components = New System.ComponentModel.Container()
             Me.RibbonControl = New DevExpress.XtraBars.Ribbon.RibbonControl()
+            Me.btn_Testing_Reports = New DevExpress.XtraBars.BarButtonItem()
             Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
             Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+            Me.rp_Developer = New DevExpress.XtraBars.Ribbon.RibbonPage()
+            Me.rpg_Testing = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
             Me.RibbonStatusBar = New DevExpress.XtraBars.Ribbon.RibbonStatusBar()
             Me.MainTab = New DevExpress.XtraTab.XtraTabControl()
             Me.tb_Home = New DevExpress.XtraTab.XtraTabPage()
             Me.tb_DeliveryChallan = New DevExpress.XtraTab.XtraTabPage()
             Me.LayoutControl_DC = New DevExpress.XtraLayout.LayoutControl()
-            Me.LayoutControlGroup_DC = New DevExpress.XtraLayout.LayoutControlGroup()
-            Me.dt_From_DC = New DevExpress.XtraEditors.DateEdit()
-            Me.LayoutControlItem_From_DC = New DevExpress.XtraLayout.LayoutControlItem()
-            Me.dt_To_DC = New DevExpress.XtraEditors.DateEdit()
-            Me.LayoutControlItem_To_DC = New DevExpress.XtraLayout.LayoutControlItem()
-            Me.btn_Fetch_DC = New DevExpress.XtraEditors.SimpleButton()
-            Me.LayoutControlItem_Fetch_DC = New DevExpress.XtraLayout.LayoutControlItem()
             Me.gc_DC = New DevExpress.XtraGrid.GridControl()
             Me.gv_DC = New DevExpress.XtraGrid.Views.Grid.GridView()
+            Me.btn_Fetch_DC = New DevExpress.XtraEditors.SimpleButton()
+            Me.dt_To_DC = New DevExpress.XtraEditors.DateEdit()
+            Me.dt_From_DC = New DevExpress.XtraEditors.DateEdit()
+            Me.LayoutControlGroup_DC = New DevExpress.XtraLayout.LayoutControlGroup()
+            Me.LayoutControlItem_From_DC = New DevExpress.XtraLayout.LayoutControlItem()
+            Me.LayoutControlItem_To_DC = New DevExpress.XtraLayout.LayoutControlItem()
+            Me.LayoutControlItem_Fetch_DC = New DevExpress.XtraLayout.LayoutControlItem()
             Me.LayoutControlItem_GridControl_DC = New DevExpress.XtraLayout.LayoutControlItem()
             CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
             CType(Me.MainTab, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -45,29 +48,35 @@
             Me.tb_DeliveryChallan.SuspendLayout()
             CType(Me.LayoutControl_DC, System.ComponentModel.ISupportInitialize).BeginInit()
             Me.LayoutControl_DC.SuspendLayout()
-            CType(Me.LayoutControlGroup_DC, System.ComponentModel.ISupportInitialize).BeginInit()
-            CType(Me.dt_From_DC.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
-            CType(Me.dt_From_DC.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-            CType(Me.LayoutControlItem_From_DC, System.ComponentModel.ISupportInitialize).BeginInit()
-            CType(Me.dt_To_DC.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
-            CType(Me.dt_To_DC.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-            CType(Me.LayoutControlItem_To_DC, System.ComponentModel.ISupportInitialize).BeginInit()
-            CType(Me.LayoutControlItem_Fetch_DC, System.ComponentModel.ISupportInitialize).BeginInit()
             CType(Me.gc_DC, System.ComponentModel.ISupportInitialize).BeginInit()
             CType(Me.gv_DC, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.dt_To_DC.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.dt_To_DC.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.dt_From_DC.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.dt_From_DC.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.LayoutControlGroup_DC, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.LayoutControlItem_From_DC, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.LayoutControlItem_To_DC, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.LayoutControlItem_Fetch_DC, System.ComponentModel.ISupportInitialize).BeginInit()
             CType(Me.LayoutControlItem_GridControl_DC, System.ComponentModel.ISupportInitialize).BeginInit()
             Me.SuspendLayout()
             '
             'RibbonControl
             '
             Me.RibbonControl.ExpandCollapseItem.Id = 0
-            Me.RibbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl.ExpandCollapseItem})
+            Me.RibbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl.ExpandCollapseItem, Me.btn_Testing_Reports})
             Me.RibbonControl.Location = New System.Drawing.Point(0, 0)
-            Me.RibbonControl.MaxItemId = 1
+            Me.RibbonControl.MaxItemId = 2
             Me.RibbonControl.Name = "RibbonControl"
-            Me.RibbonControl.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
+            Me.RibbonControl.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1, Me.rp_Developer})
             Me.RibbonControl.Size = New System.Drawing.Size(696, 143)
             Me.RibbonControl.StatusBar = Me.RibbonStatusBar
+            '
+            'btn_Testing_Reports
+            '
+            Me.btn_Testing_Reports.Caption = "Reports"
+            Me.btn_Testing_Reports.Id = 1
+            Me.btn_Testing_Reports.Name = "btn_Testing_Reports"
             '
             'RibbonPage1
             '
@@ -79,6 +88,19 @@
             '
             Me.RibbonPageGroup1.Name = "RibbonPageGroup1"
             Me.RibbonPageGroup1.Text = "RibbonPageGroup1"
+            '
+            'rp_Developer
+            '
+            Me.rp_Developer.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.rpg_Testing})
+            Me.rp_Developer.Name = "rp_Developer"
+            Me.rp_Developer.Text = "Developer Tools"
+            '
+            'rpg_Testing
+            '
+            Me.rpg_Testing.ItemLinks.Add(Me.btn_Testing_Reports)
+            Me.rpg_Testing.Name = "rpg_Testing"
+            Me.rpg_Testing.ShowCaptionButton = False
+            Me.rpg_Testing.Text = "Testing"
             '
             'RibbonStatusBar
             '
@@ -125,79 +147,6 @@
             Me.LayoutControl_DC.TabIndex = 0
             Me.LayoutControl_DC.Text = "LayoutControl1"
             '
-            'LayoutControlGroup_DC
-            '
-            Me.LayoutControlGroup_DC.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
-            Me.LayoutControlGroup_DC.GroupBordersVisible = False
-            Me.LayoutControlGroup_DC.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem_From_DC, Me.LayoutControlItem_To_DC, Me.LayoutControlItem_Fetch_DC, Me.LayoutControlItem_GridControl_DC})
-            Me.LayoutControlGroup_DC.Name = "LayoutControlGroup_DC"
-            Me.LayoutControlGroup_DC.Size = New System.Drawing.Size(690, 247)
-            Me.LayoutControlGroup_DC.TextVisible = False
-            '
-            'dt_From_DC
-            '
-            Me.dt_From_DC.EditValue = Nothing
-            Me.dt_From_DC.Location = New System.Drawing.Point(74, 12)
-            Me.dt_From_DC.MenuManager = Me.RibbonControl
-            Me.dt_From_DC.Name = "dt_From_DC"
-            Me.dt_From_DC.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-            Me.dt_From_DC.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-            Me.dt_From_DC.Size = New System.Drawing.Size(242, 20)
-            Me.dt_From_DC.StyleController = Me.LayoutControl_DC
-            Me.dt_From_DC.TabIndex = 4
-            '
-            'LayoutControlItem_From_DC
-            '
-            Me.LayoutControlItem_From_DC.Control = Me.dt_From_DC
-            Me.LayoutControlItem_From_DC.Location = New System.Drawing.Point(0, 0)
-            Me.LayoutControlItem_From_DC.Name = "LayoutControlItem_From_DC"
-            Me.LayoutControlItem_From_DC.Size = New System.Drawing.Size(308, 26)
-            Me.LayoutControlItem_From_DC.Text = "From Date :"
-            Me.LayoutControlItem_From_DC.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize
-            Me.LayoutControlItem_From_DC.TextSize = New System.Drawing.Size(57, 13)
-            Me.LayoutControlItem_From_DC.TextToControlDistance = 5
-            '
-            'dt_To_DC
-            '
-            Me.dt_To_DC.EditValue = Nothing
-            Me.dt_To_DC.Location = New System.Drawing.Point(370, 12)
-            Me.dt_To_DC.MenuManager = Me.RibbonControl
-            Me.dt_To_DC.Name = "dt_To_DC"
-            Me.dt_To_DC.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-            Me.dt_To_DC.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-            Me.dt_To_DC.Size = New System.Drawing.Size(249, 20)
-            Me.dt_To_DC.StyleController = Me.LayoutControl_DC
-            Me.dt_To_DC.TabIndex = 5
-            '
-            'LayoutControlItem_To_DC
-            '
-            Me.LayoutControlItem_To_DC.Control = Me.dt_To_DC
-            Me.LayoutControlItem_To_DC.Location = New System.Drawing.Point(308, 0)
-            Me.LayoutControlItem_To_DC.Name = "LayoutControlItem_To_DC"
-            Me.LayoutControlItem_To_DC.Size = New System.Drawing.Size(303, 26)
-            Me.LayoutControlItem_To_DC.Text = "To Date :"
-            Me.LayoutControlItem_To_DC.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize
-            Me.LayoutControlItem_To_DC.TextSize = New System.Drawing.Size(45, 13)
-            Me.LayoutControlItem_To_DC.TextToControlDistance = 5
-            '
-            'btn_Fetch_DC
-            '
-            Me.btn_Fetch_DC.Location = New System.Drawing.Point(623, 12)
-            Me.btn_Fetch_DC.Name = "btn_Fetch_DC"
-            Me.btn_Fetch_DC.Size = New System.Drawing.Size(55, 22)
-            Me.btn_Fetch_DC.StyleController = Me.LayoutControl_DC
-            Me.btn_Fetch_DC.TabIndex = 6
-            Me.btn_Fetch_DC.Text = "Fetch"
-            '
-            'LayoutControlItem_Fetch_DC
-            '
-            Me.LayoutControlItem_Fetch_DC.Control = Me.btn_Fetch_DC
-            Me.LayoutControlItem_Fetch_DC.Location = New System.Drawing.Point(611, 0)
-            Me.LayoutControlItem_Fetch_DC.Name = "LayoutControlItem_Fetch_DC"
-            Me.LayoutControlItem_Fetch_DC.Size = New System.Drawing.Size(59, 26)
-            Me.LayoutControlItem_Fetch_DC.TextSize = New System.Drawing.Size(0, 0)
-            Me.LayoutControlItem_Fetch_DC.TextVisible = False
-            '
             'gc_DC
             '
             Me.gc_DC.Location = New System.Drawing.Point(12, 38)
@@ -212,6 +161,79 @@
             '
             Me.gv_DC.GridControl = Me.gc_DC
             Me.gv_DC.Name = "gv_DC"
+            '
+            'btn_Fetch_DC
+            '
+            Me.btn_Fetch_DC.Location = New System.Drawing.Point(623, 12)
+            Me.btn_Fetch_DC.Name = "btn_Fetch_DC"
+            Me.btn_Fetch_DC.Size = New System.Drawing.Size(55, 22)
+            Me.btn_Fetch_DC.StyleController = Me.LayoutControl_DC
+            Me.btn_Fetch_DC.TabIndex = 6
+            Me.btn_Fetch_DC.Text = "Fetch"
+            '
+            'dt_To_DC
+            '
+            Me.dt_To_DC.EditValue = Nothing
+            Me.dt_To_DC.Location = New System.Drawing.Point(370, 12)
+            Me.dt_To_DC.MenuManager = Me.RibbonControl
+            Me.dt_To_DC.Name = "dt_To_DC"
+            Me.dt_To_DC.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+            Me.dt_To_DC.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+            Me.dt_To_DC.Size = New System.Drawing.Size(249, 20)
+            Me.dt_To_DC.StyleController = Me.LayoutControl_DC
+            Me.dt_To_DC.TabIndex = 5
+            '
+            'dt_From_DC
+            '
+            Me.dt_From_DC.EditValue = Nothing
+            Me.dt_From_DC.Location = New System.Drawing.Point(74, 12)
+            Me.dt_From_DC.MenuManager = Me.RibbonControl
+            Me.dt_From_DC.Name = "dt_From_DC"
+            Me.dt_From_DC.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+            Me.dt_From_DC.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+            Me.dt_From_DC.Size = New System.Drawing.Size(242, 20)
+            Me.dt_From_DC.StyleController = Me.LayoutControl_DC
+            Me.dt_From_DC.TabIndex = 4
+            '
+            'LayoutControlGroup_DC
+            '
+            Me.LayoutControlGroup_DC.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
+            Me.LayoutControlGroup_DC.GroupBordersVisible = False
+            Me.LayoutControlGroup_DC.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem_From_DC, Me.LayoutControlItem_To_DC, Me.LayoutControlItem_Fetch_DC, Me.LayoutControlItem_GridControl_DC})
+            Me.LayoutControlGroup_DC.Name = "LayoutControlGroup_DC"
+            Me.LayoutControlGroup_DC.Size = New System.Drawing.Size(690, 247)
+            Me.LayoutControlGroup_DC.TextVisible = False
+            '
+            'LayoutControlItem_From_DC
+            '
+            Me.LayoutControlItem_From_DC.Control = Me.dt_From_DC
+            Me.LayoutControlItem_From_DC.Location = New System.Drawing.Point(0, 0)
+            Me.LayoutControlItem_From_DC.Name = "LayoutControlItem_From_DC"
+            Me.LayoutControlItem_From_DC.Size = New System.Drawing.Size(308, 26)
+            Me.LayoutControlItem_From_DC.Text = "From Date :"
+            Me.LayoutControlItem_From_DC.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize
+            Me.LayoutControlItem_From_DC.TextSize = New System.Drawing.Size(57, 13)
+            Me.LayoutControlItem_From_DC.TextToControlDistance = 5
+            '
+            'LayoutControlItem_To_DC
+            '
+            Me.LayoutControlItem_To_DC.Control = Me.dt_To_DC
+            Me.LayoutControlItem_To_DC.Location = New System.Drawing.Point(308, 0)
+            Me.LayoutControlItem_To_DC.Name = "LayoutControlItem_To_DC"
+            Me.LayoutControlItem_To_DC.Size = New System.Drawing.Size(303, 26)
+            Me.LayoutControlItem_To_DC.Text = "To Date :"
+            Me.LayoutControlItem_To_DC.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize
+            Me.LayoutControlItem_To_DC.TextSize = New System.Drawing.Size(45, 13)
+            Me.LayoutControlItem_To_DC.TextToControlDistance = 5
+            '
+            'LayoutControlItem_Fetch_DC
+            '
+            Me.LayoutControlItem_Fetch_DC.Control = Me.btn_Fetch_DC
+            Me.LayoutControlItem_Fetch_DC.Location = New System.Drawing.Point(611, 0)
+            Me.LayoutControlItem_Fetch_DC.Name = "LayoutControlItem_Fetch_DC"
+            Me.LayoutControlItem_Fetch_DC.Size = New System.Drawing.Size(59, 26)
+            Me.LayoutControlItem_Fetch_DC.TextSize = New System.Drawing.Size(0, 0)
+            Me.LayoutControlItem_Fetch_DC.TextVisible = False
             '
             'LayoutControlItem_GridControl_DC
             '
@@ -240,16 +262,16 @@
             Me.tb_DeliveryChallan.ResumeLayout(False)
             CType(Me.LayoutControl_DC, System.ComponentModel.ISupportInitialize).EndInit()
             Me.LayoutControl_DC.ResumeLayout(False)
-            CType(Me.LayoutControlGroup_DC, System.ComponentModel.ISupportInitialize).EndInit()
-            CType(Me.dt_From_DC.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
-            CType(Me.dt_From_DC.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-            CType(Me.LayoutControlItem_From_DC, System.ComponentModel.ISupportInitialize).EndInit()
-            CType(Me.dt_To_DC.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
-            CType(Me.dt_To_DC.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-            CType(Me.LayoutControlItem_To_DC, System.ComponentModel.ISupportInitialize).EndInit()
-            CType(Me.LayoutControlItem_Fetch_DC, System.ComponentModel.ISupportInitialize).EndInit()
             CType(Me.gc_DC, System.ComponentModel.ISupportInitialize).EndInit()
             CType(Me.gv_DC, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.dt_To_DC.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.dt_To_DC.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.dt_From_DC.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.dt_From_DC.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.LayoutControlGroup_DC, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.LayoutControlItem_From_DC, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.LayoutControlItem_To_DC, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.LayoutControlItem_Fetch_DC, System.ComponentModel.ISupportInitialize).EndInit()
             CType(Me.LayoutControlItem_GridControl_DC, System.ComponentModel.ISupportInitialize).EndInit()
             Me.ResumeLayout(False)
             Me.PerformLayout()
@@ -274,5 +296,8 @@
         Friend WithEvents gc_DC As DevExpress.XtraGrid.GridControl
         Friend WithEvents gv_DC As DevExpress.XtraGrid.Views.Grid.GridView
         Friend WithEvents LayoutControlItem_GridControl_DC As DevExpress.XtraLayout.LayoutControlItem
+        Friend WithEvents btn_Testing_Reports As DevExpress.XtraBars.BarButtonItem
+        Friend WithEvents rp_Developer As DevExpress.XtraBars.Ribbon.RibbonPage
+        Friend WithEvents rpg_Testing As DevExpress.XtraBars.Ribbon.RibbonPageGroup
     End Class
 End Namespace
