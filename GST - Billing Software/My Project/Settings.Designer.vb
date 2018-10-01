@@ -77,6 +77,30 @@ Namespace My
                 Me("LastSelectedIndex") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property ShowRateForJobWork() As Boolean
+            Get
+                Return CType(Me("ShowRateForJobWork"),Boolean)
+            End Get
+            Set
+                Me("ShowRateForJobWork") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+        Public Property ShowRateForSupplyOnApproval() As Boolean
+            Get
+                Return CType(Me("ShowRateForSupplyOnApproval"),Boolean)
+            End Get
+            Set
+                Me("ShowRateForSupplyOnApproval") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

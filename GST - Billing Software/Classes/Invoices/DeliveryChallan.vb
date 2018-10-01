@@ -69,6 +69,12 @@ Namespace Classes.Invoices.DeliveryChallan
                 Return R
             End Get
         End Property
+        <Browsable(False)>
+        ReadOnly Property TypeE As Enums.DeliveryChallanType
+            Get
+                Return Type_
+            End Get
+        End Property
 #End Region
 
 #Region "Constructors"
@@ -101,21 +107,24 @@ Namespace Classes.Invoices.DeliveryChallan
 #Region "Fields/Properties"
         Property Good As Good
         Property Quantity As Integer
+        Property Rate As Integer = 0
         <DisplayName("Taxable Value")>
         Property Value As Integer
 #End Region
 
 #Region "Constructors"
-        Sub New(ByVal Good As Good, ByVal Quantity As Integer, ByVal Value As Integer)
+        Sub New(ByVal Good As Good, ByVal Quantity As Integer, ByVal Rate As Integer, ByVal Value As Integer)
             Me.Good = Good
             Me.Quantity = Quantity
             Me.Value = Value
+            Me.Rate = Rate
         End Sub
 
         Sub New()
             Me.Good = New Good
             Me.Quantity = 0
             Me.Value = 0
+            Me.Rate = 0
         End Sub
 #End Region
 
