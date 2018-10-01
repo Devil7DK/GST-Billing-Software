@@ -22,6 +22,6 @@
 Namespace Classes.Enums
     Public Enum DeliveryChallanType As Integer
         JobWork = 0
-        forSupplyOnApproval = 1
+        SupplyOnApproval = 1
     End Enum
 End Namespace

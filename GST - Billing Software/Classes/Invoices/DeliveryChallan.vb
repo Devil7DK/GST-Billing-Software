@@ -63,7 +63,7 @@ Namespace Classes.Invoices.DeliveryChallan
                 Select Case Type_
                     Case Enums.DeliveryChallanType.JobWork
                         R &= "Job Work"
-                    Case Enums.DeliveryChallanType.forSupplyOnApproval
+                    Case Enums.DeliveryChallanType.SupplyOnApproval
                         R &= "Supply on Approval"
                 End Select
                 Return R
@@ -109,11 +109,11 @@ Namespace Classes.Invoices.DeliveryChallan
         Property Quantity As Integer
         Property Rate As Integer = 0
         <DisplayName("Taxable Value")>
-        Property Value As Integer
+        Property Value As Double
 #End Region
 
 #Region "Constructors"
-        Sub New(ByVal Good As Good, ByVal Quantity As Integer, ByVal Rate As Integer, ByVal Value As Integer)
+        Sub New(ByVal Good As Good, ByVal Quantity As Integer, ByVal Rate As Integer, ByVal Value As Double)
             Me.Good = Good
             Me.Quantity = Quantity
             Me.Value = Value

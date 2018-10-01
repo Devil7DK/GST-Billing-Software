@@ -14,7 +14,7 @@ Public Class DeliveryChallan
         Select Case DC.TypeE
             Case Classes.Enums.DeliveryChallanType.JobWork
                 ShowRate = My.Settings.ShowRateForJobWork
-            Case Classes.Enums.DeliveryChallanType.forSupplyOnApproval
+            Case Classes.Enums.DeliveryChallanType.SupplyOnApproval
                 ShowRate = My.Settings.ShowRateForSupplyOnApproval
         End Select
 
