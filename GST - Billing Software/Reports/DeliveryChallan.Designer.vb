@@ -70,6 +70,9 @@ Partial Public Class DeliveryChallan
         Me.PageFooter = New DevExpress.XtraReports.UI.PageFooterBand()
         Me.lbl_PageNumber = New DevExpress.XtraReports.UI.XRPageInfo()
         Me.GroupHeader1 = New DevExpress.XtraReports.UI.GroupHeaderBand()
+        Me.XrLabel21 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrLabel22 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrLabel23 = New DevExpress.XtraReports.UI.XRLabel()
         Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.XrTable1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XrTable2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -89,6 +92,7 @@ Partial Public Class DeliveryChallan
         '
         'XrTable1
         '
+        Me.XrTable1.AnchorHorizontal = CType((DevExpress.XtraReports.UI.HorizontalAnchorStyles.Left Or DevExpress.XtraReports.UI.HorizontalAnchorStyles.Right), DevExpress.XtraReports.UI.HorizontalAnchorStyles)
         Me.XrTable1.BorderColor = System.Drawing.Color.Gray
         Me.XrTable1.Borders = CType(((DevExpress.XtraPrinting.BorderSide.Left Or DevExpress.XtraPrinting.BorderSide.Right) _
             Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
@@ -96,7 +100,7 @@ Partial Public Class DeliveryChallan
         Me.XrTable1.Name = "XrTable1"
         Me.XrTable1.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100.0!)
         Me.XrTable1.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.XrTableRow1})
-        Me.XrTable1.SizeF = New System.Drawing.SizeF(650.0!, 25.0!)
+        Me.XrTable1.SizeF = New System.Drawing.SizeF(679.9995!, 25.0!)
         Me.XrTable1.StylePriority.UseBorderColor = False
         Me.XrTable1.StylePriority.UseBorders = False
         Me.XrTable1.StylePriority.UsePadding = False
@@ -189,22 +193,23 @@ Partial Public Class DeliveryChallan
         '
         'TopMargin
         '
+        Me.TopMargin.HeightF = 50.0!
         Me.TopMargin.Name = "TopMargin"
         Me.TopMargin.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100.0!)
         Me.TopMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft
         '
         'BottomMargin
         '
-        Me.BottomMargin.HeightF = 125.0!
+        Me.BottomMargin.HeightF = 75.0!
         Me.BottomMargin.Name = "BottomMargin"
         Me.BottomMargin.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100.0!)
         Me.BottomMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft
         '
         'ReportHeader
         '
-        Me.ReportHeader.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel2, Me.XrLabel16, Me.XrLabel15, Me.XrLabel12, Me.XrLabel11, Me.XrLabel7, Me.XrPictureBox1, Me.XrLabel6, Me.XrLabel5, Me.XrLabel4, Me.XrLabel3, Me.XrLabel10, Me.XrLabel9, Me.XrLabel8, Me.XrLabel1, Me.XrLabel13, Me.XrLabel14})
+        Me.ReportHeader.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel22, Me.XrLabel21, Me.XrLabel2, Me.XrLabel16, Me.XrLabel15, Me.XrLabel12, Me.XrLabel11, Me.XrLabel7, Me.XrPictureBox1, Me.XrLabel6, Me.XrLabel5, Me.XrLabel4, Me.XrLabel3, Me.XrLabel10, Me.XrLabel9, Me.XrLabel8, Me.XrLabel1, Me.XrLabel13, Me.XrLabel14, Me.XrLabel23})
         Me.ReportHeader.Font = New System.Drawing.Font("Century Gothic", 9.75!)
-        Me.ReportHeader.HeightF = 384.1111!
+        Me.ReportHeader.HeightF = 391.4028!
         Me.ReportHeader.Name = "ReportHeader"
         Me.ReportHeader.StylePriority.UseFont = False
         '
@@ -223,34 +228,34 @@ Partial Public Class DeliveryChallan
         Me.XrLabel16.AnchorHorizontal = DevExpress.XtraReports.UI.HorizontalAnchorStyles.Right
         Me.XrLabel16.AnchorVertical = DevExpress.XtraReports.UI.VerticalAnchorStyles.Top
         Me.XrLabel16.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Consignee].[GSTIN]")})
-        Me.XrLabel16.LocationFloat = New DevExpress.Utils.PointFloat(483.6576!, 251.8519!)
+        Me.XrLabel16.LocationFloat = New DevExpress.Utils.PointFloat(539.9995!, 274.8519!)
         Me.XrLabel16.Multiline = True
         Me.XrLabel16.Name = "XrLabel16"
         Me.XrLabel16.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel16.SizeF = New System.Drawing.SizeF(166.3424!, 24.99997!)
+        Me.XrLabel16.SizeF = New System.Drawing.SizeF(140.0!, 24.99998!)
         Me.XrLabel16.StylePriority.UseTextAlignment = False
         Me.XrLabel16.Text = "XrLabel16"
-        Me.XrLabel16.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+        Me.XrLabel16.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
         '
         'XrLabel15
         '
         Me.XrLabel15.AnchorHorizontal = DevExpress.XtraReports.UI.HorizontalAnchorStyles.Right
         Me.XrLabel15.AnchorVertical = DevExpress.XtraReports.UI.VerticalAnchorStyles.Top
         Me.XrLabel15.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Consignee].[Mobile]")})
-        Me.XrLabel15.LocationFloat = New DevExpress.Utils.PointFloat(483.6576!, 226.8519!)
+        Me.XrLabel15.LocationFloat = New DevExpress.Utils.PointFloat(539.9999!, 249.8519!)
         Me.XrLabel15.Multiline = True
         Me.XrLabel15.Name = "XrLabel15"
         Me.XrLabel15.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel15.SizeF = New System.Drawing.SizeF(166.3424!, 24.99997!)
+        Me.XrLabel15.SizeF = New System.Drawing.SizeF(140.0!, 24.99997!)
         Me.XrLabel15.StylePriority.UseTextAlignment = False
         Me.XrLabel15.Text = "XrLabel15"
-        Me.XrLabel15.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+        Me.XrLabel15.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
         '
         'XrLabel12
         '
         Me.XrLabel12.AnchorHorizontal = DevExpress.XtraReports.UI.HorizontalAnchorStyles.Right
         Me.XrLabel12.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[VoucherDate]")})
-        Me.XrLabel12.LocationFloat = New DevExpress.Utils.PointFloat(420.3704!, 57.4583!)
+        Me.XrLabel12.LocationFloat = New DevExpress.Utils.PointFloat(450.3704!, 57.4583!)
         Me.XrLabel12.Multiline = True
         Me.XrLabel12.Name = "XrLabel12"
         Me.XrLabel12.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
@@ -285,11 +290,12 @@ Partial Public Class DeliveryChallan
         '
         'XrPictureBox1
         '
+        Me.XrPictureBox1.AnchorHorizontal = CType((DevExpress.XtraReports.UI.HorizontalAnchorStyles.Left Or DevExpress.XtraReports.UI.HorizontalAnchorStyles.Right), DevExpress.XtraReports.UI.HorizontalAnchorStyles)
         Me.XrPictureBox1.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Image", "[Sender].[Logo]")})
-        Me.XrPictureBox1.ImageAlignment = DevExpress.XtraPrinting.ImageAlignment.MiddleCenter
+        Me.XrPictureBox1.ImageAlignment = DevExpress.XtraPrinting.ImageAlignment.MiddleLeft
         Me.XrPictureBox1.LocationFloat = New DevExpress.Utils.PointFloat(0!, 0!)
         Me.XrPictureBox1.Name = "XrPictureBox1"
-        Me.XrPictureBox1.SizeF = New System.Drawing.SizeF(100.0!, 100.0!)
+        Me.XrPictureBox1.SizeF = New System.Drawing.SizeF(339.375!, 100.0!)
         Me.XrPictureBox1.Sizing = DevExpress.XtraPrinting.ImageSizeMode.ZoomImage
         '
         'XrLabel6
@@ -297,28 +303,28 @@ Partial Public Class DeliveryChallan
         Me.XrLabel6.AnchorHorizontal = DevExpress.XtraReports.UI.HorizontalAnchorStyles.Right
         Me.XrLabel6.AnchorVertical = DevExpress.XtraReports.UI.VerticalAnchorStyles.Top
         Me.XrLabel6.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Sender].[GSTIN]")})
-        Me.XrLabel6.LocationFloat = New DevExpress.Utils.PointFloat(483.6574!, 139.5834!)
+        Me.XrLabel6.LocationFloat = New DevExpress.Utils.PointFloat(539.9999!, 137.5834!)
         Me.XrLabel6.Multiline = True
         Me.XrLabel6.Name = "XrLabel6"
         Me.XrLabel6.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel6.SizeF = New System.Drawing.SizeF(166.3425!, 25.0!)
+        Me.XrLabel6.SizeF = New System.Drawing.SizeF(140.0!, 25.0!)
         Me.XrLabel6.StylePriority.UseTextAlignment = False
         Me.XrLabel6.Text = "XrLabel6"
-        Me.XrLabel6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+        Me.XrLabel6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
         '
         'XrLabel5
         '
         Me.XrLabel5.AnchorHorizontal = DevExpress.XtraReports.UI.HorizontalAnchorStyles.Right
         Me.XrLabel5.AnchorVertical = DevExpress.XtraReports.UI.VerticalAnchorStyles.Top
         Me.XrLabel5.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Sender].[Mobile]")})
-        Me.XrLabel5.LocationFloat = New DevExpress.Utils.PointFloat(483.6575!, 114.5834!)
+        Me.XrLabel5.LocationFloat = New DevExpress.Utils.PointFloat(540.0001!, 112.5834!)
         Me.XrLabel5.Multiline = True
         Me.XrLabel5.Name = "XrLabel5"
         Me.XrLabel5.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel5.SizeF = New System.Drawing.SizeF(166.3426!, 25.0!)
+        Me.XrLabel5.SizeF = New System.Drawing.SizeF(140.0!, 25.0!)
         Me.XrLabel5.StylePriority.UseTextAlignment = False
         Me.XrLabel5.Text = "XrLabel5"
-        Me.XrLabel5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+        Me.XrLabel5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
         '
         'XrLabel4
         '
@@ -348,7 +354,7 @@ Partial Public Class DeliveryChallan
         '
         Me.XrLabel10.AnchorHorizontal = DevExpress.XtraReports.UI.HorizontalAnchorStyles.Right
         Me.XrLabel10.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[SerialNo]")})
-        Me.XrLabel10.LocationFloat = New DevExpress.Utils.PointFloat(420.3704!, 34.45831!)
+        Me.XrLabel10.LocationFloat = New DevExpress.Utils.PointFloat(450.3704!, 34.45831!)
         Me.XrLabel10.Multiline = True
         Me.XrLabel10.Name = "XrLabel10"
         Me.XrLabel10.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
@@ -362,7 +368,7 @@ Partial Public Class DeliveryChallan
         Me.XrLabel9.AnchorHorizontal = DevExpress.XtraReports.UI.HorizontalAnchorStyles.Right
         Me.XrLabel9.AnchorVertical = DevExpress.XtraReports.UI.VerticalAnchorStyles.Top
         Me.XrLabel9.AutoWidth = True
-        Me.XrLabel9.LocationFloat = New DevExpress.Utils.PointFloat(411.3759!, 139.5834!)
+        Me.XrLabel9.LocationFloat = New DevExpress.Utils.PointFloat(467.7184!, 137.5834!)
         Me.XrLabel9.Multiline = True
         Me.XrLabel9.Name = "XrLabel9"
         Me.XrLabel9.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
@@ -375,7 +381,7 @@ Partial Public Class DeliveryChallan
         '
         Me.XrLabel8.AnchorHorizontal = DevExpress.XtraReports.UI.HorizontalAnchorStyles.Right
         Me.XrLabel8.AnchorVertical = DevExpress.XtraReports.UI.VerticalAnchorStyles.Top
-        Me.XrLabel8.LocationFloat = New DevExpress.Utils.PointFloat(411.3759!, 114.5834!)
+        Me.XrLabel8.LocationFloat = New DevExpress.Utils.PointFloat(467.7184!, 112.5834!)
         Me.XrLabel8.Multiline = True
         Me.XrLabel8.Name = "XrLabel8"
         Me.XrLabel8.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
@@ -389,7 +395,7 @@ Partial Public Class DeliveryChallan
         Me.XrLabel1.AnchorHorizontal = DevExpress.XtraReports.UI.HorizontalAnchorStyles.Right
         Me.XrLabel1.AutoWidth = True
         Me.XrLabel1.Font = New System.Drawing.Font("Century Gothic", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel1.LocationFloat = New DevExpress.Utils.PointFloat(420.3704!, 0!)
+        Me.XrLabel1.LocationFloat = New DevExpress.Utils.PointFloat(450.3704!, 0!)
         Me.XrLabel1.Multiline = True
         Me.XrLabel1.Name = "XrLabel1"
         Me.XrLabel1.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
@@ -403,7 +409,7 @@ Partial Public Class DeliveryChallan
         '
         Me.XrLabel13.AnchorHorizontal = DevExpress.XtraReports.UI.HorizontalAnchorStyles.Right
         Me.XrLabel13.AnchorVertical = DevExpress.XtraReports.UI.VerticalAnchorStyles.Top
-        Me.XrLabel13.LocationFloat = New DevExpress.Utils.PointFloat(411.3761!, 226.8518!)
+        Me.XrLabel13.LocationFloat = New DevExpress.Utils.PointFloat(467.7184!, 249.8519!)
         Me.XrLabel13.Multiline = True
         Me.XrLabel13.Name = "XrLabel13"
         Me.XrLabel13.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
@@ -417,7 +423,7 @@ Partial Public Class DeliveryChallan
         Me.XrLabel14.AnchorHorizontal = DevExpress.XtraReports.UI.HorizontalAnchorStyles.Right
         Me.XrLabel14.AnchorVertical = DevExpress.XtraReports.UI.VerticalAnchorStyles.Top
         Me.XrLabel14.AutoWidth = True
-        Me.XrLabel14.LocationFloat = New DevExpress.Utils.PointFloat(411.3761!, 251.8519!)
+        Me.XrLabel14.LocationFloat = New DevExpress.Utils.PointFloat(467.718!, 274.852!)
         Me.XrLabel14.Multiline = True
         Me.XrLabel14.Name = "XrLabel14"
         Me.XrLabel14.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
@@ -428,6 +434,7 @@ Partial Public Class DeliveryChallan
         '
         'XrTable2
         '
+        Me.XrTable2.AnchorHorizontal = CType((DevExpress.XtraReports.UI.HorizontalAnchorStyles.Left Or DevExpress.XtraReports.UI.HorizontalAnchorStyles.Right), DevExpress.XtraReports.UI.HorizontalAnchorStyles)
         Me.XrTable2.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.XrTable2.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrTable2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold)
@@ -435,7 +442,7 @@ Partial Public Class DeliveryChallan
         Me.XrTable2.LocationFloat = New DevExpress.Utils.PointFloat(0!, 0!)
         Me.XrTable2.Name = "XrTable2"
         Me.XrTable2.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.table_Header})
-        Me.XrTable2.SizeF = New System.Drawing.SizeF(649.9999!, 25.0!)
+        Me.XrTable2.SizeF = New System.Drawing.SizeF(679.9995!, 25.0!)
         Me.XrTable2.StylePriority.UseBackColor = False
         Me.XrTable2.StylePriority.UseBorders = False
         Me.XrTable2.StylePriority.UseFont = False
@@ -514,12 +521,13 @@ Partial Public Class DeliveryChallan
         '
         'XrLabel20
         '
+        Me.XrLabel20.AnchorHorizontal = CType((DevExpress.XtraReports.UI.HorizontalAnchorStyles.Left Or DevExpress.XtraReports.UI.HorizontalAnchorStyles.Right), DevExpress.XtraReports.UI.HorizontalAnchorStyles)
         Me.XrLabel20.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[AmountInWords]")})
-        Me.XrLabel20.LocationFloat = New DevExpress.Utils.PointFloat(0.00003178914!, 44.0!)
+        Me.XrLabel20.LocationFloat = New DevExpress.Utils.PointFloat(0.00003178914!, 43.99999!)
         Me.XrLabel20.Multiline = True
         Me.XrLabel20.Name = "XrLabel20"
         Me.XrLabel20.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel20.SizeF = New System.Drawing.SizeF(650.0001!, 23.0!)
+        Me.XrLabel20.SizeF = New System.Drawing.SizeF(679.9999!, 23.0!)
         Me.XrLabel20.StylePriority.UseTextAlignment = False
         Me.XrLabel20.Text = "XrLabel20"
         Me.XrLabel20.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
@@ -527,8 +535,9 @@ Partial Public Class DeliveryChallan
         '
         'XrLabel19
         '
+        Me.XrLabel19.AnchorHorizontal = DevExpress.XtraReports.UI.HorizontalAnchorStyles.Right
         Me.XrLabel19.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[User].[Position]")})
-        Me.XrLabel19.LocationFloat = New DevExpress.Utils.PointFloat(372.9167!, 224.1249!)
+        Me.XrLabel19.LocationFloat = New DevExpress.Utils.PointFloat(402.9163!, 224.1249!)
         Me.XrLabel19.Multiline = True
         Me.XrLabel19.Name = "XrLabel19"
         Me.XrLabel19.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
@@ -540,8 +549,9 @@ Partial Public Class DeliveryChallan
         '
         'XrLabel18
         '
+        Me.XrLabel18.AnchorHorizontal = DevExpress.XtraReports.UI.HorizontalAnchorStyles.Right
         Me.XrLabel18.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[User].[FullName]")})
-        Me.XrLabel18.LocationFloat = New DevExpress.Utils.PointFloat(373.3797!, 201.125!)
+        Me.XrLabel18.LocationFloat = New DevExpress.Utils.PointFloat(403.3799!, 201.1249!)
         Me.XrLabel18.Multiline = True
         Me.XrLabel18.Name = "XrLabel18"
         Me.XrLabel18.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
@@ -553,7 +563,8 @@ Partial Public Class DeliveryChallan
         '
         'XrLabel17
         '
-        Me.XrLabel17.LocationFloat = New DevExpress.Utils.PointFloat(372.9167!, 126.125!)
+        Me.XrLabel17.AnchorHorizontal = DevExpress.XtraReports.UI.HorizontalAnchorStyles.Right
+        Me.XrLabel17.LocationFloat = New DevExpress.Utils.PointFloat(402.9169!, 126.125!)
         Me.XrLabel17.Multiline = True
         Me.XrLabel17.Name = "XrLabel17"
         Me.XrLabel17.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
@@ -564,12 +575,13 @@ Partial Public Class DeliveryChallan
         '
         'XrTable3
         '
+        Me.XrTable3.AnchorHorizontal = CType((DevExpress.XtraReports.UI.HorizontalAnchorStyles.Left Or DevExpress.XtraReports.UI.HorizontalAnchorStyles.Right), DevExpress.XtraReports.UI.HorizontalAnchorStyles)
         Me.XrTable3.Borders = CType(((DevExpress.XtraPrinting.BorderSide.Left Or DevExpress.XtraPrinting.BorderSide.Right) _
             Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
-        Me.XrTable3.LocationFloat = New DevExpress.Utils.PointFloat(0.00004577637!, 0!)
+        Me.XrTable3.LocationFloat = New DevExpress.Utils.PointFloat(0.00004768372!, 0!)
         Me.XrTable3.Name = "XrTable3"
         Me.XrTable3.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.XrTableRow3})
-        Me.XrTable3.SizeF = New System.Drawing.SizeF(649.9999!, 25.0!)
+        Me.XrTable3.SizeF = New System.Drawing.SizeF(679.9995!, 25.0!)
         Me.XrTable3.StylePriority.UseBorders = False
         '
         'XrTableRow3
@@ -615,17 +627,17 @@ Partial Public Class DeliveryChallan
         '
         Me.PageFooter.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.lbl_PageNumber})
         Me.PageFooter.Font = New System.Drawing.Font("Century Gothic", 9.75!)
-        Me.PageFooter.HeightF = 23.0!
+        Me.PageFooter.HeightF = 39.66662!
         Me.PageFooter.Name = "PageFooter"
         Me.PageFooter.StylePriority.UseFont = False
         '
         'lbl_PageNumber
         '
         Me.lbl_PageNumber.AnchorHorizontal = CType((DevExpress.XtraReports.UI.HorizontalAnchorStyles.Left Or DevExpress.XtraReports.UI.HorizontalAnchorStyles.Right), DevExpress.XtraReports.UI.HorizontalAnchorStyles)
-        Me.lbl_PageNumber.LocationFloat = New DevExpress.Utils.PointFloat(0!, 0!)
+        Me.lbl_PageNumber.LocationFloat = New DevExpress.Utils.PointFloat(0.00006357829!, 16.6666!)
         Me.lbl_PageNumber.Name = "lbl_PageNumber"
         Me.lbl_PageNumber.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.lbl_PageNumber.SizeF = New System.Drawing.SizeF(649.9998!, 23.0!)
+        Me.lbl_PageNumber.SizeF = New System.Drawing.SizeF(679.9998!, 23.0!)
         Me.lbl_PageNumber.StylePriority.UseTextAlignment = False
         Me.lbl_PageNumber.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
         Me.lbl_PageNumber.TextFormatString = "Page {0} of {1}"
@@ -641,6 +653,60 @@ Partial Public Class DeliveryChallan
         Me.GroupHeader1.RepeatEveryPage = True
         Me.GroupHeader1.StylePriority.UseFont = False
         '
+        'XrLabel21
+        '
+        Me.XrLabel21.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Consignee].[Address].[State].[NameWithCode]")})
+        Me.XrLabel21.LocationFloat = New DevExpress.Utils.PointFloat(0.00003178914!, 361.1111!)
+        Me.XrLabel21.Multiline = True
+        Me.XrLabel21.Name = "XrLabel21"
+        Me.XrLabel21.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel21.SizeF = New System.Drawing.SizeF(326.8519!, 23.0!)
+        Me.XrLabel21.TextFormatString = "Place of Supply: {0}"
+        '
+        'XrLabel22
+        '
+        Me.XrLabel22.AnchorHorizontal = DevExpress.XtraReports.UI.HorizontalAnchorStyles.Right
+        Me.XrLabel22.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.XrLabel22.Borders = CType(((DevExpress.XtraPrinting.BorderSide.Left Or DevExpress.XtraPrinting.BorderSide.Top) _
+            Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
+        Me.XrLabel22.BorderWidth = 2.0!
+        Me.XrLabel22.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel22.LocationFloat = New DevExpress.Utils.PointFloat(429.7213!, 316.9815!)
+        Me.XrLabel22.Multiline = True
+        Me.XrLabel22.Name = "XrLabel22"
+        Me.XrLabel22.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel22.SizeF = New System.Drawing.SizeF(106.2779!, 48.0!)
+        Me.XrLabel22.StylePriority.UseBorderColor = False
+        Me.XrLabel22.StylePriority.UseBorders = False
+        Me.XrLabel22.StylePriority.UseBorderWidth = False
+        Me.XrLabel22.StylePriority.UseFont = False
+        Me.XrLabel22.StylePriority.UsePadding = False
+        Me.XrLabel22.StylePriority.UseTextAlignment = False
+        Me.XrLabel22.Text = "Challan Type :"
+        Me.XrLabel22.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+        '
+        'XrLabel23
+        '
+        Me.XrLabel23.AnchorHorizontal = DevExpress.XtraReports.UI.HorizontalAnchorStyles.Right
+        Me.XrLabel23.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.XrLabel23.Borders = CType(((DevExpress.XtraPrinting.BorderSide.Top Or DevExpress.XtraPrinting.BorderSide.Right) _
+            Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
+        Me.XrLabel23.BorderWidth = 2.0!
+        Me.XrLabel23.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel23.LocationFloat = New DevExpress.Utils.PointFloat(535.9993!, 316.9815!)
+        Me.XrLabel23.Multiline = True
+        Me.XrLabel23.Name = "XrLabel23"
+        Me.XrLabel23.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel23.SizeF = New System.Drawing.SizeF(144.0003!, 48.0!)
+        Me.XrLabel23.StylePriority.UseBorderColor = False
+        Me.XrLabel23.StylePriority.UseBorders = False
+        Me.XrLabel23.StylePriority.UseBorderWidth = False
+        Me.XrLabel23.StylePriority.UseFont = False
+        Me.XrLabel23.StylePriority.UsePadding = False
+        Me.XrLabel23.StylePriority.UseTextAlignment = False
+        Me.XrLabel23.Text = "Job Work"
+        Me.XrLabel23.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+        '
         'BindingSource1
         '
         Me.BindingSource1.DataSource = GetType(Devil7.Billing.GST.Classes.Invoices.DeliveryChallan.Voucher)
@@ -650,7 +716,7 @@ Partial Public Class DeliveryChallan
         Me.Bands.AddRange(New DevExpress.XtraReports.UI.Band() {Me.Detail, Me.TopMargin, Me.BottomMargin, Me.ReportHeader, Me.ReportFooter, Me.PageFooter, Me.GroupHeader1})
         Me.ComponentStorage.AddRange(New System.ComponentModel.IComponent() {Me.BindingSource1})
         Me.DataSource = Me.BindingSource1
-        Me.Margins = New System.Drawing.Printing.Margins(100, 100, 100, 125)
+        Me.Margins = New System.Drawing.Printing.Margins(85, 85, 50, 75)
         Me.Version = "18.1"
         CType(Me.XrTable1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.XrTable2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -709,4 +775,7 @@ Partial Public Class DeliveryChallan
     Friend WithEvents PageFooter As DevExpress.XtraReports.UI.PageFooterBand
     Friend WithEvents lbl_PageNumber As DevExpress.XtraReports.UI.XRPageInfo
     Friend WithEvents GroupHeader1 As DevExpress.XtraReports.UI.GroupHeaderBand
+    Friend WithEvents XrLabel21 As DevExpress.XtraReports.UI.XRLabel
+    Friend WithEvents XrLabel22 As DevExpress.XtraReports.UI.XRLabel
+    Friend WithEvents XrLabel23 As DevExpress.XtraReports.UI.XRLabel
 End Class
