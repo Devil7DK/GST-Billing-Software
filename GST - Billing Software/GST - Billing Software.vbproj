@@ -94,6 +94,7 @@
   <ItemGroup>
     <Compile Include="Classes\Database\Connection.vb" />
     <Compile Include="Classes\Database\User.vb" />
+    <Compile Include="Classes\Enums\DeliveryChallanType.vb" />
     <Compile Include="Classes\Encryption.vb" />
     <Compile Include="Classes\Invoices\DeliveryChallan.vb" />
     <Compile Include="Classes\Misc.vb" />
