@@ -96,7 +96,9 @@
     <Compile Include="Classes\Database\User.vb" />
     <Compile Include="Classes\Enums\DeliveryChallanType.vb" />
     <Compile Include="Classes\Encryption.vb" />
+    <Compile Include="Classes\Enums\TaxInvoiceType.vb" />
     <Compile Include="Classes\Invoices\DeliveryChallan.vb" />
+    <Compile Include="Classes\Invoices\TaxInvoice.vb" />
     <Compile Include="Classes\Misc.vb" />
     <Compile Include="Classes\Objects\Address.vb" />
     <Compile Include="Classes\Objects\Good.vb" />
