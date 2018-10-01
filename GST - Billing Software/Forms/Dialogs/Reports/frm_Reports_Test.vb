@@ -47,7 +47,7 @@ Namespace Forms.Dialogs.Reports
                                                                         New Classes.Invoices.DeliveryChallan.Item(New Classes.Objects.Good(6, "Item6", "7488", Classes.Objects.Units.GetAllUnits(10)), 5, 50)
                                                                         })
             Dim User As New Classes.Objects.User(1, "Dineshkumar T", "Dev", "Developer", New Date(1999, 4, 29), New Date(2018, 1, 1), New Classes.Objects.Address, "8056684414", Nothing)
-            Dim DC As New Classes.Invoices.DeliveryChallan.Voucher(1, "DC-0001", Now, Sender_, Receiver, Items, User)
+            Dim DC As New Classes.Invoices.DeliveryChallan.Voucher(1, "DC-0001", Now, Sender_, Receiver, Items, User, Classes.Enums.DeliveryChallanType.forSupplyOnApproval)
 
             Dim Report As New DeliveryChallan
             Report.DataMember = "Goods"

@@ -25,6 +25,10 @@ Imports System.ComponentModel
 Namespace Classes.Invoices.DeliveryChallan
     Public Class Voucher
 
+#Region "Variables"
+        Dim Type_ As Enums.DeliveryChallanType = Enums.DeliveryChallanType.JobWork
+#End Region
+
 #Region "Fields/Properties"
         <Browsable(False)>
         Property ID As Integer
@@ -52,7 +56,19 @@ Namespace Classes.Invoices.DeliveryChallan
                 Return Misc.AmountInWords(Total).Trim
             End Get
         End Property
-
+        <DisplayName("Delivery Challan Type")>
+        ReadOnly Property Type As String
+            Get
+                Dim R As String = "for "
+                Select Case Type_
+                    Case Enums.DeliveryChallanType.JobWork
+                        R &= "Job Work"
+                    Case Enums.DeliveryChallanType.forSupplyOnApproval
+                        R &= "Supply on Approval"
+                End Select
+                Return R
+            End Get
+        End Property
 #End Region
 
 #Region "Constructors"
@@ -64,8 +80,9 @@ Namespace Classes.Invoices.DeliveryChallan
             Me.Consignee = New Party
             Me.Goods = New List(Of Item)
             Me.User = New User
+            Me.Type_ = Enums.DeliveryChallanType.JobWork
         End Sub
-        Sub New(ByVal ID As Integer, ByVal SerialNo As String, ByVal VoucherDate As Date, ByVal Sender As Sender, ByVal Consignee As Party, ByVal Goods As List(Of Item), ByVal User As User)
+        Sub New(ByVal ID As Integer, ByVal SerialNo As String, ByVal VoucherDate As Date, ByVal Sender As Sender, ByVal Consignee As Party, ByVal Goods As List(Of Item), ByVal User As User, ByVal Type As Enums.DeliveryChallanType)
             Me.ID = ID
             Me.SerialNo = SerialNo
             Me.VoucherDate = VoucherDate
@@ -73,6 +90,7 @@ Namespace Classes.Invoices.DeliveryChallan
             Me.Consignee = Consignee
             Me.Goods = Goods
             Me.User = User
+            Me.Type_ = Type
         End Sub
 #End Region
 
