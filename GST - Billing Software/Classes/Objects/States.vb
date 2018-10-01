@@ -70,6 +70,11 @@ Namespace Classes.Objects
 #Region "Fields/Properties"
         ReadOnly Property Name As String
         ReadOnly Property Code As Integer
+        ReadOnly Property NameWithCode As String
+            Get
+                Return String.Format("{0} ({1})", Name, Code)
+            End Get
+        End Property
 #End Region
 
 #Region "Constructors"
