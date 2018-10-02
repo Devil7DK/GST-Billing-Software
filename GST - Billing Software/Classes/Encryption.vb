@@ -25,12 +25,12 @@ Imports System.Security.Cryptography
 Namespace Classes
     Public Class Encryption
 #Region "Encryption Keys & Settings"
-        Private Shared PassPhrase As String = "QS@14#%1S478"
-        Private Shared m_strSaltValue As String = "G$M@RT@^"            '---- Should be minimum 8 characters
-        Private Shared m_strInitVector As String = "@D$7@RL#$DKS$#@D"   '--- must be 16 bytes
+        Private Shared ReadOnly PassPhrase As String = "QS@14#%1S478"
+        Private Shared ReadOnly m_strSaltValue As String = "G$M@RT@^"            '---- Should be minimum 8 characters
+        Private Shared ReadOnly m_strInitVector As String = "@D$7@RL#$DKS$#@D"   '--- must be 16 bytes
 
-        Private Shared m_strIterations As Integer = 47                  '--- can be any number
-        Private Shared m_intKeySize As Integer = 256                    '--- can be 192 or 128 or 256
+        Private Shared ReadOnly m_strIterations As Integer = 47                  '--- can be any number
+        Private Shared ReadOnly m_intKeySize As Integer = 256                    '--- can be 192 or 128 or 256
 #End Region
 #Region "EncryptDecryptClass"
         'Encrypt Function: 
@@ -41,10 +41,10 @@ Namespace Classes
                 initVectorBytes = System.Text.Encoding.ASCII.GetBytes(m_strInitVector)
 
                 Dim saltValueBytes As Byte()
-                saltValueBytes = System.Text.Encoding.ASCII.GetBytes(m_strSaltValue)
+                saltValueBytes = Text.Encoding.ASCII.GetBytes(m_strSaltValue)
 
                 Dim plainTextBytes As Byte()
-                plainTextBytes = System.Text.Encoding.UTF8.GetBytes(plainText)
+                plainTextBytes = Text.Encoding.UTF8.GetBytes(plainText)
 
                 Dim mkey As New Rfc2898DeriveBytes(PassPhrase,
                                           saltValueBytes,
@@ -55,14 +55,12 @@ Namespace Classes
                 intKeySize = CType((m_intKeySize / 8), Integer)
                 keyBytes = mkey.GetBytes(intKeySize)
 
-                Dim symmetricKey As New Security.Cryptography.RijndaelManaged
-                symmetricKey.Mode = Security.Cryptography.CipherMode.CBC
+                Dim symmetricKey As New RijndaelManaged With {.Mode = CipherMode.CBC}
 
-                Dim encryptor As Security.Cryptography.ICryptoTransform = symmetricKey.CreateEncryptor(keyBytes, initVectorBytes)
-                Dim memoryStream As New IO.MemoryStream
-                Dim cryptoStream As New Security.Cryptography.CryptoStream(memoryStream,
-                                            encryptor,
-                                             Security.Cryptography.CryptoStreamMode.Write)
+                Dim encryptor As ICryptoTransform = symmetricKey.CreateEncryptor(keyBytes, initVectorBytes)
+                Dim memoryStream As New MemoryStream
+                Dim cryptoStream As New CryptoStream(memoryStream,
+                                            encryptor, CryptoStreamMode.Write)
                 cryptoStream.Write(plainTextBytes, 0, plainTextBytes.Length)
                 cryptoStream.FlushFinalBlock()
 
@@ -101,8 +99,7 @@ Namespace Classes
                 intKeySize = CType((m_intKeySize / 8), Integer)
                 keyBytes = mkey.GetBytes(intKeySize)
 
-                Dim symmetricKey As New Security.Cryptography.RijndaelManaged
-                symmetricKey.Mode = Security.Cryptography.CipherMode.CBC
+                Dim symmetricKey As New RijndaelManaged With {.Mode = CipherMode.CBC}
 
                 Dim decryptor As Security.Cryptography.ICryptoTransform
                 decryptor = symmetricKey.CreateDecryptor(keyBytes, initVectorBytes)

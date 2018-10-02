@@ -61,7 +61,7 @@ Namespace Classes.Objects
             Me.GSTIN = GSTIN
             Me.Address = Address
             Me.Mobile = Mobile
-            Me.Logo = If(Logo IsNot Nothing, Logo, GenerateLogo(Name))
+            Me.Logo = If(Logo, GenerateLogo(Name))
         End Sub
 #End Region
 

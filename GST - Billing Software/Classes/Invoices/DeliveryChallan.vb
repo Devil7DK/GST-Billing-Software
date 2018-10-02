@@ -26,7 +26,7 @@ Namespace Classes.Invoices.DeliveryChallan
     Public Class Voucher
 
 #Region "Variables"
-        Dim Type_ As Enums.DeliveryChallanType = Enums.DeliveryChallanType.JobWork
+        ReadOnly Type_ As Enums.DeliveryChallanType = Enums.DeliveryChallanType.JobWork
 #End Region
 
 #Region "Fields/Properties"
@@ -106,14 +106,14 @@ Namespace Classes.Invoices.DeliveryChallan
 
 #Region "Fields/Properties"
         Property Good As Good
-        Property Quantity As Integer
-        Property Rate As Integer = 0
+        Property Quantity As Double
+        Property Rate As Double = 0
         <DisplayName("Taxable Value")>
         Property Value As Double
 #End Region
 
 #Region "Constructors"
-        Sub New(ByVal Good As Good, ByVal Quantity As Integer, ByVal Rate As Integer, ByVal Value As Double)
+        Sub New(ByVal Good As Good, ByVal Quantity As Double, ByVal Rate As Double, ByVal Value As Double)
             Me.Good = Good
             Me.Quantity = Quantity
             Me.Value = Value

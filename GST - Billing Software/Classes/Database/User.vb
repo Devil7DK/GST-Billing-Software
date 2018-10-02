@@ -24,7 +24,7 @@ Imports System.Data.SqlClient
 Namespace Classes.Database
     Public Class User
 
-        Private Shared TableName As String = "Users"
+        Private Shared ReadOnly TableName As String = "Users"
 
         Public Shared Async Function Login(ByVal UserName As String, ByVal Password As String) As Threading.Tasks.Task(Of Objects.User)
             Dim R As Objects.User = Nothing

@@ -23,7 +23,7 @@ Imports System.Reflection
 Namespace Classes
     Public Class ServerSettings
 
-        Private Shared ConfigFilePath As String = IO.Path.Combine(My.Computer.FileSystem.GetFileInfo((New System.Uri(Assembly.GetExecutingAssembly().CodeBase)).AbsolutePath.Replace("%20", " ")).Directory.FullName, "DatabseServer.config")
+        Private Shared ReadOnly ConfigFilePath As String = IO.Path.Combine(My.Computer.FileSystem.GetFileInfo((New System.Uri(Assembly.GetExecutingAssembly().CodeBase)).AbsolutePath.Replace("%20", " ")).Directory.FullName, "DatabseServer.config")
 
         Public Shared Function GetSettings() As ServerSettings
             On Error Resume Next
