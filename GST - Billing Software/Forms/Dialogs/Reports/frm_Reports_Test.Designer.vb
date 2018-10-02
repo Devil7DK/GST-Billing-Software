@@ -29,6 +29,7 @@
             Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
             Me.btn_TaxInvoice = New DevExpress.XtraEditors.SimpleButton()
             Me.btn_JobWorkTaxInvoice = New DevExpress.XtraEditors.SimpleButton()
+            Me.btn_GoodsReceipt = New DevExpress.XtraEditors.SimpleButton()
             Me.FlowLayoutPanel1.SuspendLayout()
             Me.SuspendLayout()
             '
@@ -54,6 +55,7 @@
             Me.FlowLayoutPanel1.Controls.Add(Me.btn_DeliveryChallan_Supply)
             Me.FlowLayoutPanel1.Controls.Add(Me.btn_TaxInvoice)
             Me.FlowLayoutPanel1.Controls.Add(Me.btn_JobWorkTaxInvoice)
+            Me.FlowLayoutPanel1.Controls.Add(Me.btn_GoodsReceipt)
             Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
             Me.FlowLayoutPanel1.Location = New System.Drawing.Point(0, 0)
             Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
@@ -76,7 +78,15 @@
             Me.btn_JobWorkTaxInvoice.TabIndex = 2
             Me.btn_JobWorkTaxInvoice.Text = "Job Work Tax Invoice"
             '
-            'frm_Reports_Test
+            'btn_GoodsReceipt
+            '
+            Me.btn_GoodsReceipt.Location = New System.Drawing.Point(211, 32)
+            Me.btn_GoodsReceipt.Name = "btn_GoodsReceipt"
+            Me.btn_GoodsReceipt.Size = New System.Drawing.Size(89, 23)
+            Me.btn_GoodsReceipt.TabIndex = 3
+            Me.btn_GoodsReceipt.Text = "Goods Receipt"
+            '
+            'Frm_Reports_Test
             '
             Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
             Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -86,7 +96,7 @@
             Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
             Me.MaximizeBox = False
             Me.MinimizeBox = False
-            Me.Name = "frm_Reports_Test"
+            Me.Name = "Frm_Reports_Test"
             Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
             Me.Text = "Reports Test/Demo"
             Me.FlowLayoutPanel1.ResumeLayout(False)
@@ -99,5 +109,6 @@
         Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
         Friend WithEvents btn_TaxInvoice As DevExpress.XtraEditors.SimpleButton
         Friend WithEvents btn_JobWorkTaxInvoice As DevExpress.XtraEditors.SimpleButton
+        Friend WithEvents btn_GoodsReceipt As DevExpress.XtraEditors.SimpleButton
     End Class
 End Namespace

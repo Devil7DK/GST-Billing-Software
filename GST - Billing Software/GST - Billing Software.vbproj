@@ -97,6 +97,7 @@
     <Compile Include="Classes\Enums\DeliveryChallanType.vb" />
     <Compile Include="Classes\Encryption.vb" />
     <Compile Include="Classes\Enums\TaxInvoiceType.vb" />
+    <Compile Include="Classes\Invoices\GoodsReceipt.vb" />
     <Compile Include="Classes\Invoices\DeliveryChallan.vb" />
     <Compile Include="Classes\Invoices\TaxInvoice.vb" />
     <Compile Include="Classes\Misc.vb" />
@@ -151,6 +152,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Reports\GoodsReceipt.Designer.vb">
+      <DependentUpon>GoodsReceipt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\GoodsReceipt.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reports\TaxInvoice.Designer.vb">
       <DependentUpon>TaxInvoice.vb</DependentUpon>
     </Compile>
@@ -184,6 +191,9 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\GoodsReceipt.resx">
+      <DependentUpon>GoodsReceipt.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\TaxInvoice.resx">
       <DependentUpon>TaxInvoice.vb</DependentUpon>
     </EmbeddedResource>
@@ -199,6 +209,8 @@
     </None>
     <None Include="My Project\DataSources\Devil7.Billing.GST.Classes.Invoices.DeliveryChallan.Item.datasource" />
     <None Include="My Project\DataSources\Devil7.Billing.GST.Classes.Invoices.DeliveryChallan.Voucher.datasource" />
+    <None Include="My Project\DataSources\Devil7.Billing.GST.Classes.Invoices.GoodsReceipt.Item.datasource" />
+    <None Include="My Project\DataSources\Devil7.Billing.GST.Classes.Invoices.GoodsReceipt.Voucher.datasource" />
     <None Include="My Project\DataSources\Devil7.Billing.GST.Classes.Invoices.TaxInvoice.Item.datasource" />
     <None Include="My Project\DataSources\Devil7.Billing.GST.Classes.Invoices.TaxInvoice.Voucher.datasource" />
     <None Include="My Project\Settings.settings">
