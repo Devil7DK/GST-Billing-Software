@@ -101,7 +101,7 @@ Namespace Classes
                 tempDecValue : tempDecValue = String.Empty
                     If (Math.Round(Val(nAmount), 2) * 100) > 0 Then wAmount =
                   Trim(AmountInWords(CStr(Math.Round(Val(nAmount), 2) * 100),
-                  wAmount.Trim & " Pesos And ", 1)) & " Cents"
+                  wAmount.Trim & " Rupees And ", 1)) & " Paise"
                 End If
             Catch ex As Exception
                 MessageBox.Show("Error Encountered: " & ex.Message,
