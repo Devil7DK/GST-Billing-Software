@@ -350,7 +350,7 @@ Partial Public Class GoodsReceipt
         Me.XrLabel7.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel7.SizeF = New System.Drawing.SizeF(326.8519!, 22.99998!)
         Me.XrLabel7.StylePriority.UseFont = False
-        Me.XrLabel7.Text = "Details of Consignee (Shipped to)"
+        Me.XrLabel7.Text = "Details of Consignor (Shipped from)"
         '
         'XrPictureBox1
         '
