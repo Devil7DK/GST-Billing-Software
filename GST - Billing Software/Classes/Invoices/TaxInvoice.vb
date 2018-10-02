@@ -26,7 +26,7 @@ Namespace Classes.Invoices.TaxInvoice
     Public Class Voucher
 
 #Region "Variables"
-        Dim Type_ As Enums.TaxInvoiceType = Enums.TaxInvoiceType.Normal
+        ReadOnly Type_ As Enums.TaxInvoiceType = Enums.TaxInvoiceType.Normal
 #End Region
 
 #Region "Fields/Properties"
@@ -54,11 +54,41 @@ Namespace Classes.Invoices.TaxInvoice
                 Return R
             End Get
         End Property
+        <DisplayName("Total IGST")>
+        ReadOnly Property TotalIGST As Double
+            Get
+                Dim R As Double = 0
+                For Each i As Item In Goods
+                    R += i.IGST
+                Next
+                Return R
+            End Get
+        End Property
+        <DisplayName("Total CGST")>
+        ReadOnly Property TotalCGST As Double
+            Get
+                Dim R As Double = 0
+                For Each i As Item In Goods
+                    R += i.CGST
+                Next
+                Return R
+            End Get
+        End Property
+        <DisplayName("Total SGST")>
+        ReadOnly Property TotalSGST As Double
+            Get
+                Dim R As Double = 0
+                For Each i As Item In Goods
+                    R += i.SGST
+                Next
+                Return R
+            End Get
+        End Property
         ReadOnly Property Total As Double
             Get
                 Dim R As Double = 0
                 For Each i As Item In Goods
-                    R += i.Value + i.IGST + i.CGST + i.SGST
+                    R += i.Value + i.IGST
                 Next
                 Return R
             End Get
@@ -70,15 +100,15 @@ Namespace Classes.Invoices.TaxInvoice
                 Return Misc.AmountInWords(Total).Trim
             End Get
         End Property
-        <DisplayName("Delivery Challan Type")>
+        <DisplayName("Invoice Type")>
         ReadOnly Property Type As String
             Get
-                Dim R As String = "for "
+                Dim R As String = "Tax Invoice"
                 Select Case Type_
-                    Case Enums.DeliveryChallanType.JobWork
-                        R &= "Job Work"
+                    Case Enums.TaxInvoiceType.Normal
+                        R = "Tax Invoice"
                     Case Enums.DeliveryChallanType.SupplyOnApproval
-                        R &= "Supply on Approval"
+                        R = "Job Work Tax Invoice"
                 End Select
                 Return R
             End Get
@@ -97,17 +127,19 @@ Namespace Classes.Invoices.TaxInvoice
             Me.SerialNo = "0"
             Me.VoucherDate = Now
             Me.Sender = New Sender
+            Me.Receiver = New Party
             Me.Consignee = New Party
             Me.Goods = New List(Of Item)
             Me.User = New User
-            Me.Type_ = Enums.DeliveryChallanType.JobWork
+            Me.Type_ = Enums.TaxInvoiceType.Normal
         End Sub
-        Sub New(ByVal ID As Integer, ByVal SerialNo As String, ByVal VoucherDate As Date, ByVal Sender As Sender, ByVal Consignee As Party, ByVal Goods As List(Of Item), ByVal User As User, ByVal Type As Enums.DeliveryChallanType)
+        Sub New(ByVal ID As Integer, ByVal SerialNo As String, ByVal VoucherDate As Date, ByVal Sender As Sender, ByVal Receiver As Party, ByVal Consignee As Party, ByVal Goods As List(Of Item), ByVal User As User, ByVal Type As Enums.TaxInvoiceType)
             Me.ID = ID
             Me.SerialNo = SerialNo
             Me.VoucherDate = VoucherDate
             Me.Sender = Sender
             Me.Consignee = Consignee
+            Me.Receiver = Receiver
             Me.Goods = Goods
             Me.User = User
             Me.Type_ = Type
@@ -120,17 +152,29 @@ Namespace Classes.Invoices.TaxInvoice
 
 #Region "Fields/Properties"
         Property Good As Good
-        Property Quantity As Integer
-        Property Rate As Integer = 0
+        Property Quantity As Double
+        Property Rate As Double = 0
         <DisplayName("Taxable Value")>
         Property Value As Double
         ReadOnly Property CGST As Double
-        ReadOnly Property IGST As Double
+            Get
+                Return Value * ((Good.TaxPercentage / 2) / 100)
+            End Get
+        End Property
         ReadOnly Property SGST As Double
+            Get
+                Return Value * ((Good.TaxPercentage / 2) / 100)
+            End Get
+        End Property
+        ReadOnly Property IGST As Double
+            Get
+                Return Value * (Good.TaxPercentage / 100)
+            End Get
+        End Property
 #End Region
 
 #Region "Constructors"
-        Sub New(ByVal Good As Good, ByVal Quantity As Integer, ByVal Rate As Integer, ByVal Value As Double)
+        Sub New(ByVal Good As Good, ByVal Quantity As Double, ByVal Rate As Double, ByVal Value As Double)
             Me.Good = Good
             Me.Quantity = Quantity
             Me.Value = Value
