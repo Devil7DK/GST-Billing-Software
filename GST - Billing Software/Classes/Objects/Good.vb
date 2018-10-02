@@ -29,6 +29,7 @@ Namespace Classes.Objects
         Property Name As String
         Property HSN As String
         Property Unit As Unit
+        Property TaxPercentage As Integer
 #End Region
 
 #Region "Constructors"
@@ -37,13 +38,15 @@ Namespace Classes.Objects
             Me.Name = ""
             Me.HSN = ""
             Me.Unit = New Unit
+            Me.TaxPercentage = 0
         End Sub
 
-        Sub New(ByVal ID As Integer, ByVal Name As String, ByVal HSN As String, ByVal Unit As Unit)
+        Sub New(ByVal ID As Integer, ByVal Name As String, ByVal HSN As String, ByVal Unit As Unit, ByVal TaxPercentage As Integer)
             Me.ID = ID
             Me.Name = Name
             Me.HSN = HSN
             Me.Unit = Unit
+            Me.TaxPercentage = TaxPercentage
         End Sub
 #End Region
 
