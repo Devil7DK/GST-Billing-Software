@@ -46,7 +46,7 @@ Namespace Forms
 
 #Region "Control Events"
         Private Sub btn_Testing_Reports_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btn_Testing_Reports.ItemClick
-            Forms.Dialogs.Reports.frm_Reports_Test.ShowDialog()
+            Forms.Dialogs.Reports.Frm_Reports_Test.ShowDialog()
         End Sub
 #End Region
 
