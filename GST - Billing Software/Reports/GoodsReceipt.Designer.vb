@@ -529,7 +529,7 @@ Partial Public Class GoodsReceipt
         Me.XrTable2.LocationFloat = New DevExpress.Utils.PointFloat(0!, 0!)
         Me.XrTable2.Name = "XrTable2"
         Me.XrTable2.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.table_Header})
-        Me.XrTable2.SizeF = New System.Drawing.SizeF(680.0!, 40.625!)
+        Me.XrTable2.SizeF = New System.Drawing.SizeF(680.0!, 25.0!)
         Me.XrTable2.StylePriority.UseBackColor = False
         Me.XrTable2.StylePriority.UseBorders = False
         Me.XrTable2.StylePriority.UseFont = False
@@ -906,7 +906,7 @@ Partial Public Class GoodsReceipt
         Me.GroupHeader1.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrTable2})
         Me.GroupHeader1.Font = New System.Drawing.Font("Century Gothic", 9.75!)
         Me.GroupHeader1.GroupFields.AddRange(New DevExpress.XtraReports.UI.GroupField() {New DevExpress.XtraReports.UI.GroupField("Goods.Good.ID", DevExpress.XtraReports.UI.XRColumnSortOrder.None)})
-        Me.GroupHeader1.HeightF = 40.625!
+        Me.GroupHeader1.HeightF = 25.0!
         Me.GroupHeader1.KeepTogether = True
         Me.GroupHeader1.Name = "GroupHeader1"
         Me.GroupHeader1.RepeatEveryPage = True
